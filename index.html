@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+      
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            max-width: 3000px; /* Set max width for the slider */
+            margin: auto;
+            margin-left: 0%;
+            margin-right: 0%;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Smooth transition */
+            width: 400%; /* Adjust width based on the number of images */
+        }
+
+        .slides img {
+            width: 25%; /* 4 images = 25% each */
+            height: 560px;
+        }
+
+        /* Buttons for navigation */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+<div class="a" style="background-color: orange;">
+       <h1 align="middle" style="color:black;">G PULLA REDDY ENGINEERING
+         COLLEGE<br>(AUTONOMOUS)</h1>
+</div>
+    <div class="b" style="background-color: black; width: 100%;  height: 110px;  ">
+         <img align="left" style="margin-left: 40px; padding-top: 3px; " src="https://www.gprec.ac.in/wp-content/uploads/2019/05/gprec_logo1.png"><br><br>
+          <h4 align="right">
+            <a href="#" style="color:orange; margin-right: 20px;">Home</a>
+             <a href="dep.html" style="color: orange; margin-right: 40px;">Departments</a>
+            <a href="#" style="color: orange; margin-right: 20px;">Admissions</a>
+            <a href="#" style="color: orange; margin-right: 20px;">Academics</a>
+             <a href="#" style="color: orange; margin-right: 20px;">R&D</a>
+            <a href="#" style="color: orange; margin-right: 20px;">Exam Cell</a>
+            <a href="dep.html" style="color:orange; margin-right: 20px;">Training and Placements</a>
+             <a href="#" style="color: orange; margin-right: 20px;">Payments</a>
+            <a href="dep.html" style="color:orange; margin-right: 30px;">About us</a>
+            
+         </h4>
+    </div>
+<div class="slider">
+    <div class="slides">
+        <img src="https://www.gprec.ac.in//wp-content/uploads/2022/09/dataquest-2022-ranking.jpeg" alt="Image 1">
+        <img src="https://www.gprec.ac.in/wp-content/uploads/2019/08/orange-1-1024x482@2x.jpg" alt="Image 2">
+        <img src="https://www.gprec.ac.in/wp-content/uploads/2019/07/gprec-banner1.jpg" alt="Image 3">
+        <img src="https://www.gprec.ac.in/wp-content/uploads/2019/06/Girls-Hostel.jpg" alt="Image 4">
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slides img').length;
+
+    function showSlide(index) {
+        if (index >= totalSlides) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else {
+            currentIndex = index;
+        }
+        const slideWidth = 100 / totalSlides; // Adjust width dynamically based on image count
+        slides.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+    }
+
+    function moveSlide(direction) {
+        showSlide(currentIndex + direction);
+    }
+
+    // Optional: Auto slide every 3 seconds
+    setInterval(() => {
+        moveSlide(1);
+    }, 3000); // Adjust timing if needed (3000ms = 3 seconds)
+</script>
+
+
+</html>
+
+

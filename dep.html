@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Departments with Flip Effect</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        h1 {
+            background-color: #007BFF;
+            color: white;
+            font-size: 36px;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            text-transform: uppercase;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+            padding: 0 20px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            perspective: 1000px; /* Perspective to give 3D effect */
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Ensures the backside is hidden during the flip */
+            backface-visibility: hidden;
+            border-radius: 12px;
+        }
+
+        .flip-card-front {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .flip-card-back {
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(180deg);
+            font-size: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Departments</h1>
+        <div class="image-grid">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://static.vecteezy.com/system/resources/previews/026/590/789/original/cse-logo-design-inspiration-for-a-unique-identity-modern-elegance-and-creative-design-watermark-your-success-with-the-striking-this-logo-vector.jpg" alt="CSE Department">
+                    </div>
+                    <div class="flip-card-back">
+                       <a href="cse.html"> Computer Science Engineering </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://static.vecteezy.com/system/resources/previews/013/616/732/original/ece-letter-logo-design-in-illustration-logo-calligraphy-designs-for-logo-poster-invitation-etc-free-vector.jpg" alt="ECE Department">
+                    </div>
+                    <div class="flip-card-back">
+                        Electronics & Communication Engineering
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://img.freepik.com/premium-vector/eee-logo-eee-letter-eee-letter-logo-design-initials-eee-logo-linked-with-circle-uppercase-monogram-logo-eee-typography-technology-business-real-estate-brand_229120-72591.jpg" alt="EEE Department">
+                    </div>
+                    <div class="flip-card-back">
+                        Electrical & Electronics Engineering
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://www.crushpixel.com/big-static23/preview4/ce-c-e-letter-logo-6118719.jpg" alt="CE Department">
+                    </div>
+                    <div class="flip-card-back">
+                        Civil Engineering
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://thumbs.dreamstime.com/b/me-m-e-letter-logo-design-initial-letter-me-linked-circle-uppercase-monogram-logo-red-blue-me-logo-m-e-design-me-m-e-me-m-e-196990625.jpg" alt="ME Department">
+                    </div>
+                    <div class="flip-card-back">
+                        Mechanical Engineering
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://www.shutterstock.com/image-vector/csm-letter-logo-design-on-600nw-2147363805.jpg" alt="CSM Department">
+                    </div>
+                    <div class="flip-card-back">
+                        Computer Science & Machine Learning
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
